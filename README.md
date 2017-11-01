@@ -1,2 +1,2 @@
-# Express-Handlebars
-Express Handlebars Boilerplate with JSON data for dynamic menu
+# Handlebars for S3
+Handlebars Boilerplate with JSON data for s3 bucket
