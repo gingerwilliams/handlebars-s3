@@ -1,0 +1,29 @@
+<nav class="navigation navigation_box theme_blue">
+    <ul class="navigation_tier-one">
+        <li class="navigation_menu-item"><a class="navigation_menu-link" href="/">home</a></li>
+        <li class="navigation_menu-item"><a class="navigation_menu-link" href="/start">start</a></li>
+        <li class="navigation_menu-item"><a class="navigation_menu-link" href="/deliverables">project deliverables</a></li>
+        <li class="navigation_menu-item"><a class="navigation_menu-link has-subnav" href="/overview">design guidelines</a>
+            <ul class="navigation_two-tier theme_lt-blue">
+                <li class="navigation_menu-item"><a class="navigation_menu-link" href="/overview" class="navigation_menu-link">overview</a></li>
+                <li class="navigation_menu-item"><a class="navigation_menu-link" href="/principles">principles</a></li>
+                <li class="navigation_menu-item"><a class="navigation_menu-link has-subnav" href="/colors">Visual Guidelines</a>
+                    <ul class="navigation_three-tier theme_white">
+                        <li class="navigation_menu-item"><a class="navigation_menu-link" href="/colors">colors</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="navigation_menu-item"><a class="navigation_menu-link has-subnav" href="/components">Components</a></li>
+        <li class="navigation_menu-item"><a class="navigation_menu-link has-subnav" href="/accordion">Accordion</a></li>
+        <li class="navigation_menu-item"><a class="navigation_menu-link has-subnav" href="/test">Test</a>
+            <ul class="navigation_two-tier theme_lt-blue">
+
+                {{#each dataFile.sections}}
+                    <li class="navigation_menu-item"><a class="navigation_menu-link has-subnav" href="{{@index}}">{{header}}</a></li>
+                {{/each}}
+
+            </ul>
+        </li>
+    </ul>
+</nav>

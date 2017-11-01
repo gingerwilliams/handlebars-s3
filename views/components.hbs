@@ -1,0 +1,16 @@
+<h1>{{data.sections}}</h1>
+<p>{{comment}}</p>
+<p>{{dataFile.customPropertyNames}}</p>
+
+<p class="visual-sample">{{{sample}}}</p>
+<p class="code-sample">{{sample}}</p>
+
+{{!-- built in helpers such as if statemtns loops --}}
+{{#if condition}}
+    condition is met
+{{else}}
+    condition is not met
+{{/if}}
+{{#each anyArray as |val key|}}
+    {{!-- {{this}} this is the current value of the current iteration--}}
+{{/each}}

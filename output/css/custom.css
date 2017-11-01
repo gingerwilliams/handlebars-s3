@@ -1,0 +1,306 @@
+
+
+* Animation 
+*/
+/* line 6, src/utility/_animation.less */
+.animation__floating {
+  animation-name: floating;
+  animation-duration: 200000ms;
+  animation-iteration-count: infinite;
+}
+/* line 11, src/utility/_animation.less */
+.animation__title-in {
+  animation: title-in 800ms forwards ease-in-out 750ms;
+}
+/* line 14, src/utility/_animation.less */
+.animation__from-top {
+  animation: from-top 350ms forwards cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+/* line 17, src/utility/_animation.less */
+.animation__from-bottom {
+  animation: from-bottom 350ms forwards cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+/**
+* Keyframes for specific animation
+*/
+@keyframes floating {
+  /* line 26, src/utility/_animation.less */
+  0% {
+    transform: translateY(0%);
+  }
+  /* line 29, src/utility/_animation.less */
+  50% {
+    transform: translateY(50%);
+  }
+  /* line 32, src/utility/_animation.less */
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes title-in {
+  /* line 38, src/utility/_animation.less */
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-25%);
+  }
+  /* line 43, src/utility/_animation.less */
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+@keyframes from-top {
+  /* line 50, src/utility/_animation.less */
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+  /* line 55, src/utility/_animation.less */
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+@keyframes from-bottom {
+  /* line 62, src/utility/_animation.less */
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(15%);
+  }
+  /* line 67, src/utility/_animation.less */
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+/* line 4, src/utility/_color.less */
+.color_font_newell-blue {
+  color: #298fc2;
+}
+/* line 7, src/utility/_color.less */
+.color_font_newell-gray {
+  color: #696158;
+}
+/* line 12, src/utility/_color.less */
+.color_font_brand-blue {
+  color: #3A5DAE;
+}
+
+
+/* line 39, src/utility/_grid.less */
+.desktop-maxwidth {
+  max-width: 1660px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 46, src/utility/_grid.less */
+.content-block {
+  max-width: 1660px;
+  margin: auto;
+  padding: 16px 48px;
+}
+@media only screen and (min-width: 1024px) {
+  /* line 50, src/utility/_grid.less */
+  .content-block {
+    min-height: 600px;
+  }
+}
+
+
+
+
+/* line 30, src/organism/_header.less */
+.header-base_wrap {
+  width: 100%;
+}
+/* line 33, src/organism/_header.less */
+.header-base_box {
+  width: 100%;
+  padding: 12px 24px;
+}
+@media only screen and (min-width: 768px) {
+  /* line 36, src/organism/_header.less */
+  .header-base_box {
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+/* line 40, src/organism/_header.less */
+.header-base_border {
+  border-bottom: 1px solid #cde7f4;
+}
+/* line 44, src/organism/_header.less */
+.header-base_title {
+  font-family: 'robotoslab-light', Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  color: #298fc2;
+  margin-top: 24px;
+}
+@media only screen and (min-width: 768px) {
+  /* line 49, src/organism/_header.less */
+  .header-base_title {
+    margin-top: 38px;
+    line-height: .8;
+    font-size: 3.0rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  /* line 56, src/organism/_header.less */
+  .header-base_title {
+    margin-top: 38px;
+    line-height: .8;
+    font-size: 3.0rem;
+  }
+}
+/* line 19, src/organism/_footer.less */
+.footer-base_theme {
+  background-color: #E3E1DE;
+  width: 100%;
+  margin-bottom: 24px;
+}
+/* line 25, src/organism/_footer.less */
+.footer-base_box {
+  padding: 24px 48px;
+}
+/* line 31, src/organism/_footer.less */
+.footer-base_text {
+  line-height: 1;
+  color: #696158;
+  margin: 0 0 0 0;
+}
+/* line 37, src/organism/_footer.less */
+.footer-base_link {
+  color: #298fc2;
+}
+/* line 43, src/organism/_footer.less */
+.footer-alt_theme {
+  background-color: #FFFFFF;
+  border-top: 1px solid #cde7f4;
+  width: 100%;
+}
+/* line 48, src/organism/_footer.less */
+.footer-alt_box {
+  padding: 24px 48px;
+}
+/* line 52, src/organism/_footer.less */
+.footer-alt_text {
+  line-height: 1;
+  color: #696158;
+  margin: 0 0 0 0;
+}
+/* line 58, src/organism/_footer.less */
+.footer-alt_link {
+  color: #298fc2;
+}
+
+Styleguide Markup Blocks.Form
+*/
+/* line 111, src/organism/_signup-form.less */
+.form-base_header {
+  margin-bottom: 24px;
+}
+/* line 114, src/organism/_signup-form.less */
+.form-base_content {
+  margin-bottom: 24px;
+}
+/* line 117, src/organism/_signup-form.less */
+.form-base_subheader {
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #E3E1DE;
+}
+/* line 122, src/organism/_signup-form.less */
+.form-base_title {
+  font-size: 2.4rem;
+  font-family: 'robotoslab-light', Helvetica, Arial, sans-serif;
+  color: #298fc2;
+}
+/* line 127, src/organism/_signup-form.less */
+.form-base_subtitle {
+  font-size: 1.8rem;
+  font-family: 'robotoslab-regular', Helvetica, Arial, sans-serif;
+  color: #696158;
+}
+/* line 133, src/organism/_signup-form.less */
+.form-base_footer {
+  text-align: right;
+  border-top: 3px solid #E3E1DE;
+  padding: 24px 0;
+}
+/* line 137, src/organism/_signup-form.less */
+.form-base_footer .button_box {
+  margin: 0 0 0 16px;
+}
+/* line 141, src/organism/_signup-form.less */
+.form-base_date {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+/* line 144, src/organism/_signup-form.less */
+.form-base_date .input-select_wrapper {
+  width: 30%;
+}
+/* line 149, src/organism/_signup-form.less */
+.form-base .label_box {
+  padding: 0;
+}
+
+/* line 63, src/organism/_navigation.less */
+.navigation {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  /* line 66, src/organism/_navigation.less */
+  .navigation {
+    display: block;
+  }
+}
+/* line 70, src/organism/_navigation.less */
+.navigation_menu-item {
+  color: #FFFFFF;
+}
+/* line 82, src/organism/_navigation.less */
+.navigation_menu-link {
+  color: #FFFFFF;
+  display: inline-block;
+  padding: 16px 24px;
+  width: 100%;
+  cursor: pointer;
+  font-family: 'roboto-light', Helvetica, Arial, sans-serif;
+}
+/* line 90, src/organism/_navigation.less */
+.navigation_text {
+  font-size: 1.8rem;
+}
+/* line 95, src/organism/_navigation.less */
+.navigation_two-tier .navigation_menu-link {
+  padding: 16px 32px;
+}
+/* line 101, src/organism/_navigation.less */
+.navigation_three-tier .navigation_menu-link {
+  padding: 16px 48px;
+}
+/* line 111, src/organism/_navigation.less */
+.theme_white .navigation_menu-link {
+  color: #298fc2;
+}
+/* line 118, src/organism/_navigation.less */
+.theme_blue .navigation_menu-link {
+  color: #FFFFFF;
+}
+/* line 126, src/organism/_navigation.less */
+.theme_lt-blue .navigation_menu-link {
+  color: #298fc2;
+}
+/* line 135, src/organism/_navigation.less */
+.theme_lt-gray .navigation_menu-link {
+  color: #696158;
+}
