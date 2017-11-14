@@ -12,25 +12,34 @@
 </head>
 
 <body>
-    <div id="nav">
+    <div id="handlebars-demo">
+
     </div>
+    <nav>
+        <ul>
+        </ul>
+        <ul id="comp-nav">
+        </ul>
+
+    </nav>
+    
     <!-- <div id="component">
         </div> -->
     <footer class="footer-base footer-base_theme">
-            <div class="footer-base__text footer-base_box ">
-            <p class="footer-base_copyright footer-base_text">&copy; 2017 <a class="footer-base_link">Newell Brands</a>, All Rights Reserved | <a class="footer-base_link" href="#">Legal</a></p>
-            </div>
-        </footer>
-    
-    <script id="nav-template" type="text/x-handlebars-template">​ 
+        <div class="footer-base__text footer-base_box ">
+        <p class="footer-base_copyright footer-base_text">&copy; 2017 <a class="footer-base_link">Newell Brands</a>, All Rights Reserved | <a class="footer-base_link" href="#">Legal</a></p>
+        </div>
+    </footer>
+
+    <!-- nav template start -->
+    <script id="component-template" type="text/x-handlebars-template">​ 
         {{#each sections}}
         <li><a href="components.html?id={{@index}}" class="button show-more">{{header}}</a></li>
-            <!-- partial template here -->
+            
         {{/each}}
     </script>
+    <!-- nav template start -->
 
-    
-    
     <script type="text/javascript" src="handlebars-v4.0.11.js"></script>​
     <script type="text/javascript" src="handlebars.runtime-v2.0.0.js"></script>​
     <script type="text/javascript" src="index.js"></script>​
@@ -38,15 +47,14 @@
 
     <script>
         $(document).ready(function(){
-            var nav = document.getElementById("nav-template").innerHTML;
+            var nav = document.getElementById("component-template").innerHTML;
             var compiledNavTemplate = Handlebars.compile(nav);
             var componentId = getParameterByName("id");
             
             $.getJSON("data.json", function(data){
-                document.getElementById("nav").innerHTML = compiledNavTemplate(data);
+                document.getElementById("comp-nav").innerHTML = compiledNavTemplate(data);
             }); 
         });
-    
     </script>
 
 

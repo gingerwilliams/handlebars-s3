@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Untitled</title>
+
+    
+    
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.kendostatic.com/2013.3.1324/js/kendo.all.min.js"></script>
+  	<script src="https://rawgithub.com/phiggins42/bloody-jquery-plugins/master/pubsub.js"></script>
+</head>
+<body>  
+  
+  <div id='app' class="container">
+    
+  </div>
+  
+  <script type="text/x-kendo-template" id="layout-template">
+  	<ul data-role="menu" id="menu">
+      <li><a href="#/">Home</a></li>
+      <li><a href="#/about">About</a></li>
+      <li><a href="#/pictures">Pictures</a></li>
+      <li><a href="#/guestbook">Sign The Guestbook</a></li>
+  	</ul>
+    <div id="content"></div>
+  </script>
+  
+  <script>
+  
+  	(function() {
+      
+      var menu;
+      
+      // DUMMY ENCAPSULATION FOR DEMONSTRATION
+      var layout = (function() {
+        var layout = new kendo.Layout('#layout-template', {
+        	init: function () {
+          		// cache a reference to the menu item
+          		menu = $('#menu');
+			    }
+        });
+          
+        var updateMenu = function (url) {
+
+          // blanket removal of active class
+          menu.find('li').removeClass('k-state-active');
+
+          // find the element by its url and make that one active
+          menu.find('li > a[href="#'+ url + '"]').parent().addClass('k-state-active');
+      	}
+        
+        // subscribe the /router/change event        
+        $.subscribe('/router/change', function (url) {
+          updateMenu(url);
+        });
+          
+        return layout;
+        
+      }());
+      
+      var views = {
+        home: new kendo.View('<h1>Home</h1>'),
+        about: new kendo.View('<h1>About</h1>'),
+        pictures: new kendo.View('<h1>Pictures</h1>'),
+        guestbook: new kendo.View('<h1>Guestbook</h1>')
+      };
+      
+      var router = new kendo.Router({
+        init: function () {
+          layout.render('#app');
+        },
+        change: function (e) {
+          
+          // publish the /router/change event and pass the url
+          $.publish('/router/change', [e.url]);
+        }
+      });
+      
+      router.route('/', function (e) {
+        layout.showIn('#content', views.home);
+      });
+      
+      router.route('/about', function (e) {
+        layout.showIn('#content', views.about);
+      });
+      
+      router.route('/pictures', function (e) {
+        layout.showIn('#content', views.pictures);
+      });
+      
+      router.route('/guestbook', function (e) {
+        layout.showIn('#content', views.guestbook);
+      }); 
+      
+      router.start();
+      
+    }());
+  
+  </script>
+  
+</body>
+</html>

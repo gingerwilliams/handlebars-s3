@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/handlebars-v4.0.11.js"></script>
+    <script type="text/javascript" src="scripts/sammy.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        
+    </div>
+    
+ 
+  <script type="text/javascript" >
+
+    // var app = Sammy('#main', function(){
+
+    //   this.use('Handlebars', 'hb');
+    //   this.get('#/hello/:name', function() {
+    //     // set local vars
+    //     this.title = 'Hello!'
+    //     this.name = this.params.name;
+    //     // render the template and pass it through handlebars
+    //     this.partial('mytemplate.hb');
+    //   });
+
+    //   // this.get('#/:monkey', function(context){
+    //   //   document.write(context.params.monkey);
+    //   // });
+    // });
+
+    
+    // app.run('#/');
+    
+
+    
+
+
+    var app = $.sammy('#main', function() {
+    // include the plugin and alias handlebars() to hb()
+    this.use('Handlebars', 'hbs');
+
+    this.get('#/hello', function() {
+      // set local vars
+      this.title = 'Hello!'
+      this.name = this.params.name;
+      // render the template and pass it through handlebars
+      this.partial('partials/test.hbs');
+    });
+
+    // this.get('#/hello/:name', function() {
+    //   // set local vars
+    //   this.title = 'Hello!'
+    //   this.name = this.params.name;
+    //   // render the template and pass it through handlebars
+    //   this.partial('partials/test.hbs');
+    // });
+  });
+
+  $(function() {
+    app.run()
+  });  
+  </script>
+
+  <!-- <div class="header-container">
+    <header class="wrapper clearfix">
+      <nav>
+        <ul>
+          <li><a href="#/">Home</a></li>
+          <li><a href="#/about/">About</a></li>
+          <!-- defining nav url according to route->
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <div class="main-container">
+    <div class="main wrapper clearfix">
+      <div id="app">
+        <!-- template will be injected here ->
+      </div>
+    </div>
+  </div> -->
+
+</body>
+
+</html>
