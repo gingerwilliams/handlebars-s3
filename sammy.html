@@ -14,6 +14,7 @@
   <script type="text/javascript" src="scripts/handlebars-v4.0.11.js"></script>
   <script type="text/javascript" src="scripts/sammy.js"></script>
   <script type="text/javascript" charset="utf-8" src="scripts/sammy.handlebars.js"></script>
+  <script type="text/javascript" charset="utf-8" src="scripts/sammy.json.js"></script>
 </head>
 
 <body>
@@ -21,7 +22,7 @@
         <ul class="navigation_tier-one">
             <li class="navigation_menu-item"><a class="navigation_menu-link" href="sammy.html#/start">How to Get Started</a></li>
             <li class="navigation_menu-item"><a class="navigation_menu-link" href="sammy.html#/deliverables">Project Deliverables</a></li>
-            <li class="navigation_menu-item"><a class="navigation_menu-link" href="sammy.html#/deliverables">PHome</a></li>
+            <li class="navigation_menu-item"><a class="navigation_menu-link" href="sammy.html#/">Home</a></li>
         </ul>
     </nav>
     <!-- Sammy Template -->
@@ -55,7 +56,29 @@
         this.partial('views/deliverables.hbs');
       });
 
-    
+      this.get('#/yo', function() {
+        console.log('Yo yo yo');
+      });
+
+      this.get('#/components', function(context) {
+
+        
+        
+        this.load('data-origin.json')
+            .then(function(items){
+              console.log(items.sections);
+            });
+        //   // .then(function(items){
+        //   //   $.each(items, function(i, item){
+        //   //     context.log(item.title, '-', item.artist);
+        //   //   });
+        //   // });
+        //   .then(function(items){
+            
+        //   });
+            
+        
+      });
   });
 
   $(function() {
