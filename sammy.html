@@ -14,16 +14,26 @@
   <script type="text/javascript" src="scripts/handlebars-v4.0.11.js"></script>
   <script type="text/javascript" src="scripts/sammy.js"></script>
   <script type="text/javascript" charset="utf-8" src="scripts/sammy.handlebars.js"></script>
-  <script type="text/javascript" charset="utf-8" src="scripts/sammy.json.js"></script>
+  <script type="text/javascript" charset="utf-8" src="scripts/routes.js"></script>
 </head>
 
 <body>
     <nav id="subnav" class="navigation navigation_box theme_blue">
         <ul class="navigation_tier-one">
-            <li class="navigation_menu-item"><a class="navigation_menu-link" href="sammy.html#/start">How to Get Started</a></li>
-            <li class="navigation_menu-item"><a class="navigation_menu-link" href="sammy.html#/deliverables">Project Deliverables</a></li>
-            <li class="navigation_menu-item"><a class="navigation_menu-link" href="sammy.html#/">Home</a></li>
+            <li class="navigation_menu-item"><a class="navigation_menu-link" href="#/start">How to Get Started</a></li>
+            <li class="navigation_menu-item"><a class="navigation_menu-link" href="#/deliverables">Project Deliverables</a></li>
+            <li class="navigation_menu-item"><a class="navigation_menu-link" href="#/">Home</a></li>
+            <li class="navigation_menu-item"><a class="navigation_menu-link has-subnav">Markup Blocks</a>
+              <ul class="navigation_two-tier theme_lt-blue" style="display:block">
+                  <li class="navigation_menu-item"><a class="navigation_menu-link" href="" class="navigation_menu-link">Overview</a></li>
+                  <!-- {{#printMarkup}}
+                  {{/printMarkup}} -->
+              </ul>
+          </li>
+            
         </ul>
+        
+
     </nav>
     <!-- Sammy Template -->
     <div id="main">
@@ -33,57 +43,7 @@
  
   <script type="text/javascript" >
 
-    var app = $.sammy('#main', function() {
-    // include the plugin and alias handlebars() to hb()
-      this.use('Handlebars', 'hbs');
-
-      this.get('#/hello:name', function() {
-        // set local vars
-        this.title = 'Hello!'
-        this.name = this.params.name;
-        // render the template and pass it through handlebars
-        this.partial('views/partials/test.hbs');
-      });
-      this.get('#/', function(context) {
-        this.partial('views/home.hbs');
-      });
-
-      this.get('#/start', function(context) {
-        this.partial('views/start.hbs');
-      });
-
-      this.get('#/deliverables', function(context) {
-        this.partial('views/deliverables.hbs');
-      });
-
-      this.get('#/yo', function() {
-        console.log('Yo yo yo');
-      });
-
-      this.get('#/components', function(context) {
-
-        
-        
-        this.load('data-origin.json')
-            .then(function(items){
-              console.log(items.sections);
-            });
-        //   // .then(function(items){
-        //   //   $.each(items, function(i, item){
-        //   //     context.log(item.title, '-', item.artist);
-        //   //   });
-        //   // });
-        //   .then(function(items){
-            
-        //   });
-            
-        
-      });
-  });
-
-  $(function() {
-    app.run()
-  });  
+     
   </script>
 </body>
 
